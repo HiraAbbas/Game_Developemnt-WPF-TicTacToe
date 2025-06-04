@@ -1,0 +1,58 @@
+﻿<Window x:Class="TicTacToe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicTacToe"
+        mc:Ignorable="d"
+        Title="Tic Tac Toe Game" Height="550" Width="450" Background="#FFFAFAFA">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Game Title -->
+        <TextBlock Text="TIC TAC TOE" FontSize="28" FontWeight="Bold" Foreground="#FF2E8B57"
+                   HorizontalAlignment="Center" Margin="0,10" Grid.Row="0"/>
+
+        <!-- Player Turn and Score Info -->
+        <DockPanel Grid.Row="1" Margin="0,10">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Width="200">
+                <TextBlock x:Name="TurnText" Text="Player X's Turn" FontSize="16" FontWeight="Bold"/>
+                <TextBlock x:Name="WinText" Text="" FontSize="14" Foreground="DarkRed" Margin="0,5,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Width="200">
+                <TextBlock x:Name="ScoreX" Text="Player X Wins: 0" FontSize="14" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="ScoreO" Text="Player O Wins: 0" FontSize="14" HorizontalAlignment="Right"/>
+                <TextBlock x:Name="Draws" Text="Draws: 0" FontSize="14" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Game Board -->
+        <Border Grid.Row="2" BorderBrush="#FFAAAAAA" BorderThickness="2" CornerRadius="10" Padding="10">
+            <UniformGrid x:Name="GameGrid" Rows="3" Columns="3" Margin="10">
+                <Button x:Name="Btn00" FontSize="32" Click="Button_Click"/>
+                <Button x:Name="Btn01" FontSize="32" Click="Button_Click"/>
+                <Button x:Name="Btn02" FontSize="32" Click="Button_Click"/>
+
+                <Button x:Name="Btn10" FontSize="32" Click="Button_Click"/>
+                <Button x:Name="Btn11" FontSize="32" Click="Button_Click"/>
+                <Button x:Name="Btn12" FontSize="32" Click="Button_Click"/>
+
+                <Button x:Name="Btn20" FontSize="32" Click="Button_Click"/>
+                <Button x:Name="Btn21" FontSize="32" Click="Button_Click"/>
+                <Button x:Name="Btn22" FontSize="32" Click="Button_Click"/>
+            </UniformGrid>
+        </Border>
+
+        <!-- Restart Button -->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" Margin="0,20,0,10">
+            <Button Content="Restart Game" Padding="10,5" Click="Restart_Click" Width="150" Background="#FF2E8B57" Foreground="White" FontWeight="Bold"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
